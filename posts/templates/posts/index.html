@@ -7,6 +7,17 @@
     <title>投稿一覧</title>
 </head>
 <body>
-    <h2>これは投稿一覧です。</h2>
+    <h1>これは投稿一覧です。</h1>
+
+    <h2>最新の投稿</h2>
+
+    {% for post in posts.all %}
+        <p>{{ post.title }}</p>
+        <p>{{ post.published }}</p>
+        <p>
+            <img src="{{ post.image.url }}" alt="">
+        </p>
+        <p>{{ post.summary }}</p>
+    {% endfor %}
 </body>
 </html>
